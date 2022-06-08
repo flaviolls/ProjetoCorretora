@@ -148,6 +148,60 @@ if (isset($_SESSION["erro"]))
             </div>			
         </div>
 		
+				<div id="atrasmapa">
+			<div id="mapa">
+				<div id="map">	</div>
+					<script>
+
+					  function showStuff(id) {
+
+					  if(document.getElementById(id).style.display == 'block'){
+						document.getElementById(id).style.display = 'none';
+					  }else{
+						document.getElementById(id).style.display = 'block';
+					  }
+
+					}
+
+					var geocoder = new google.maps.Geocoder();
+
+
+					function initMap() {
+					  var map = new google.maps.Map(document.getElementById('map'), {
+						zoom: 10,
+						center: {lat: -8.0548373, lng: -34.8971576}
+					  });
+
+
+					for (var i = 0; i < end.length; i++) {
+					  geocodeAddress(geocoder, map, end[i]);
+					}
+
+					}
+					
+					
+
+					function geocodeAddress(geocoder, resultsMap, address) {
+
+					  var geocoder = new google.maps.Geocoder();
+					  geocoder.geocode({'address': address}, function(results, status) {
+						if (status === google.maps.GeocoderStatus.OK) {
+						  var marker = new google.maps.Marker({
+							map: resultsMap,
+							position: results[0].geometry.location,
+							title: address
+						  });
+						} else {
+						  alert('Geocode was not successful for the following reason: ' + status);
+						}
+					  });
+
+					}
+
+					</script>
+				</div>
+			</div>
+		
 
 	   
         <div id="icones">
