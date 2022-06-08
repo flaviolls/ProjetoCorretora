@@ -147,6 +147,7 @@ if (isset($_SESSION["erro"]))
 			?>
             </div>			
         </div>
+		
 
 	   
         <div id="icones">
