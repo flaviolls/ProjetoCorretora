@@ -1,0 +1,9 @@
+/*$arquivo = "fotos/lalala.png";
+if (!unlink($arquivo))
+{
+  echo ("Erro ao deletar $arquivo");
+}
+else
+{
+  echo ("Deletado $arquivo com sucesso!");
+}*/
